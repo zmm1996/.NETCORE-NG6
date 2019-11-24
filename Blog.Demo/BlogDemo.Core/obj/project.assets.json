@@ -695,11 +695,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Practice\\netcore\\ASP.NET CORE+ NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj",
+      "projectUniqueName": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj",
       "projectName": "BlogDemo.Core",
-      "projectPath": "E:\\Practice\\netcore\\ASP.NET CORE+ NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj",
+      "projectPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj",
       "packagesPath": "C:\\Users\\14589\\.nuget\\packages\\",
-      "outputPath": "E:\\Practice\\netcore\\ASP.NET CORE+ NG6\\Blog.Demo\\BlogDemo.Core\\obj\\",
+      "outputPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

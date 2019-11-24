@@ -8,11 +8,16 @@ using BlogDemo.Core.Intefaces;
 using BlogDemo.Infrastructure.Database;
 using BlogDemo.Infrastructure.Repositories;
 using BlogDemo.Infrastructure.Resources;
+using BlogDemo.Infrastructure.Services;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,7 +44,12 @@ namespace BlogDemo.Api
                 options.UseSqlite("Data Source=BlogDemo.db");
 
             });
-            services.AddMvc();
+            services.AddMvc(options=> {
+                options.ReturnHttpNotAcceptable = true;//不支持客户端所需要的格式返回状态码
+                //支持返回xml格式
+                options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+
+            });
                 //.AddFluentValidation();
             services.AddHsts(option =>
             {
@@ -66,6 +76,15 @@ namespace BlogDemo.Api
             services.AddAutoMapper(typeof(MappingProfile));//9.0之后需要手动指定要注入的类型
             //注册FluentValidator
             services.AddTransient<IValidator<PostResource>, PostResourceValidator>();
+
+            //IurlHelper
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>()
+              .AddScoped<IUrlHelper>(sp => new UrlHelper(sp.GetRequiredService<IActionContextAccessor>().ActionContext));
+
+            //动态查询
+            var propertyMappingContainer = new PropertyMappingContainer();
+            propertyMappingContainer.Register<PostPropertyMapping>();
+            services.AddSingleton<IPropertyMappingContainer>(propertyMappingContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

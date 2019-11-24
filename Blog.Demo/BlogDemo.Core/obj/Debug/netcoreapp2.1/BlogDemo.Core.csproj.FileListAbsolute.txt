@@ -7,3 +7,12 @@ E:\Practice\netcore\ASP.NET CORE+ NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcorea
 E:\Practice\netcore\ASP.NET CORE+ NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.AssemblyInfo.cs
 E:\Practice\netcore\ASP.NET CORE+ NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.dll
 E:\Practice\netcore\ASP.NET CORE+ NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.pdb
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Core\bin\Debug\netcoreapp2.1\BlogDemo.Core.deps.json
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Core\bin\Debug\netcoreapp2.1\BlogDemo.Core.dll
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Core\bin\Debug\netcoreapp2.1\BlogDemo.Core.pdb
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.csprojAssemblyReference.cache
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.csproj.CoreCompileInputs.cache
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.AssemblyInfoInputs.cache
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.AssemblyInfo.cs
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.dll
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Core\obj\Debug\netcoreapp2.1\BlogDemo.Core.pdb

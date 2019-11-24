@@ -235,6 +235,15 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "System.Linq.Dynamic.Core/1.0.19": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
+        }
+      },
       "BlogDemo.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -841,6 +850,42 @@
         "version.txt"
       ]
     },
+    "System.Linq.Dynamic.Core/1.0.19": {
+      "sha512": "GFYslLz/1ZZ0+gbqYED2zlD0H95BIK4hOpIcEEEfTDDXAcKE5vpXQQseOGduNVjcJZOF3Wx+4npa2EjdFpuDgA==",
+      "type": "package",
+      "path": "system.linq.dynamic.core/1.0.19",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/System.Linq.Dynamic.Core.dll",
+        "lib/net35/System.Linq.Dynamic.Core.pdb",
+        "lib/net35/System.Linq.Dynamic.Core.xml",
+        "lib/net40/System.Linq.Dynamic.Core.dll",
+        "lib/net40/System.Linq.Dynamic.Core.pdb",
+        "lib/net40/System.Linq.Dynamic.Core.xml",
+        "lib/net45/System.Linq.Dynamic.Core.dll",
+        "lib/net45/System.Linq.Dynamic.Core.pdb",
+        "lib/net45/System.Linq.Dynamic.Core.xml",
+        "lib/net46/System.Linq.Dynamic.Core.dll",
+        "lib/net46/System.Linq.Dynamic.Core.pdb",
+        "lib/net46/System.Linq.Dynamic.Core.xml",
+        "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll",
+        "lib/netcoreapp2.1/System.Linq.Dynamic.Core.pdb",
+        "lib/netcoreapp2.1/System.Linq.Dynamic.Core.xml",
+        "lib/netstandard1.3/System.Linq.Dynamic.Core.dll",
+        "lib/netstandard1.3/System.Linq.Dynamic.Core.pdb",
+        "lib/netstandard1.3/System.Linq.Dynamic.Core.xml",
+        "lib/netstandard2.0/System.Linq.Dynamic.Core.dll",
+        "lib/netstandard2.0/System.Linq.Dynamic.Core.pdb",
+        "lib/netstandard2.0/System.Linq.Dynamic.Core.xml",
+        "lib/uap10.0/System.Linq.Dynamic.Core.dll",
+        "lib/uap10.0/System.Linq.Dynamic.Core.pdb",
+        "lib/uap10.0/System.Linq.Dynamic.Core.pri",
+        "lib/uap10.0/System.Linq.Dynamic.Core.xml",
+        "system.linq.dynamic.core.1.0.19.nupkg.sha512",
+        "system.linq.dynamic.core.nuspec"
+      ]
+    },
     "BlogDemo.Core/1.0.0": {
       "type": "project",
       "path": "../BlogDemo.Core/BlogDemo.Core.csproj",
@@ -852,7 +897,8 @@
       "BlogDemo.Core >= 1.0.0",
       "FluentValidation >= 8.5.1",
       "Microsoft.EntityFrameworkCore.Design >= 3.0.1",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "System.Linq.Dynamic.Core >= 1.0.19"
     ]
   },
   "packageFolders": {
@@ -862,11 +908,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Practice\\netcore\\ASP.NET CORE+ NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj",
+      "projectUniqueName": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj",
       "projectName": "BlogDemo.Infrastructure",
-      "projectPath": "E:\\Practice\\netcore\\ASP.NET CORE+ NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj",
+      "projectPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\14589\\.nuget\\packages\\",
-      "outputPath": "E:\\Practice\\netcore\\ASP.NET CORE+ NG6\\Blog.Demo\\BlogDemo.Infrastructure\\obj\\",
+      "outputPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -885,8 +931,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "E:\\Practice\\netcore\\ASP.NET CORE+ NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj": {
-              "projectPath": "E:\\Practice\\netcore\\ASP.NET CORE+ NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj"
+            "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj": {
+              "projectPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj"
             }
           }
         }
@@ -915,6 +961,10 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "System.Linq.Dynamic.Core": {
+            "target": "Package",
+            "version": "[1.0.19, )"
           }
         },
         "imports": [

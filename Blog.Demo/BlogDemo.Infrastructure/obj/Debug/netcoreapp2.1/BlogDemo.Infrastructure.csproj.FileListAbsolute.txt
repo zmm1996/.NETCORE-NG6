@@ -18,3 +18,23 @@ E:\Practice\netcore\ASP.NET CORE+ NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debu
 E:\Practice\netcore\ASP.NET CORE+ NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.Relational.xml
 E:\Practice\netcore\ASP.NET CORE+ NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Logging.Abstractions.dll
 E:\Practice\netcore\ASP.NET CORE+ NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Logging.Abstractions.xml
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.deps.json
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.runtimeconfig.json
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.runtimeconfig.dev.json
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.dll
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Infrastructure.pdb
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Core.dll
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\BlogDemo.Core.pdb
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.Relational.xml
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Logging.Abstractions.xml
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.csprojAssemblyReference.cache
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.AssemblyInfoInputs.cache
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.AssemblyInfo.cs
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.csproj.CopyComplete
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.dll
+E:\Practice\netcore\netcoreapi\.NETCORE-NG6\Blog.Demo\BlogDemo.Infrastructure\obj\Debug\netcoreapp2.1\BlogDemo.Infrastructure.pdb
