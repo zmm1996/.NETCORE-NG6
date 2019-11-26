@@ -2,6 +2,7 @@
 using BlogDemo.Core.Entities;
 using BlogDemo.Core.Intefaces;
 using BlogDemo.Infrastructure.Database;
+using BlogDemo.Infrastructure.Extensions;
 using BlogDemo.Infrastructure.Resources;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
@@ -35,7 +36,7 @@ namespace BlogDemo.Api.Contrlloers
             IConfiguration configuration,
             IMapper mapper,//AotuMapper
             IValidator<PostResource> validator
-            ,IUrlHelper urlHelper
+            , IUrlHelper urlHelper
             )
         {
             this._postRepository = postRepository;
@@ -54,7 +55,10 @@ namespace BlogDemo.Api.Contrlloers
         {
             var postsList = await _postRepository.GetAllPostsAsync(parameters);
             //  _logger.LogError(12,"get post all/.....");
-            var result = _mapper.Map<IEnumerable<Post>, IEnumerable<PostResource>>(postsList);
+            var resources = _mapper.Map<IEnumerable<Post>, IEnumerable<PostResource>>(postsList);
+
+            //动态查询字段
+            var result = resources.ToDynamicIEnumerable(parameters.Fields);
 
             //创建上一页
             var previousPagelink = postsList.HasPrevious ? CreatePostUri(parameters, PaginationResourceUriType.PreviousPage) : null;
@@ -64,10 +68,10 @@ namespace BlogDemo.Api.Contrlloers
 
             var meta = new
             {
-                PageSize = postsList.PageSize,
-                PageIndex = postsList.PageIndex,
-                TotalItemCount = postsList.TotalItemCount,
-                PageCount = postsList.PageCount,
+                postsList.PageSize,
+                postsList.PageIndex,
+                postsList.TotalItemCount,
+                postsList.PageCount,
                 previousPagelink,
                 nextPagelink
             };
@@ -80,17 +84,18 @@ namespace BlogDemo.Api.Contrlloers
         }
 
         [HttpGet("{Id}")]
-        public async Task<ActionResult> Get(int Id)
+        public async Task<ActionResult> Get(int Id,string fields=null)
         {
             var post = await _postRepository.GetPostByIdAsync(Id);
-            if(post==null)
+            if (post == null)
             {
                 return NotFound();
             }
-
+            
             var postResource = _mapper.Map<Post, PostResource>(post);
 
-            return Ok(postResource);
+            var result = postResource.ToDynamic(fields);
+            return Ok(result);
         }
         [HttpPost]
         public async Task<ActionResult> Post([FromBody]PostResource postResource)
@@ -136,7 +141,7 @@ namespace BlogDemo.Api.Contrlloers
                 case PaginationResourceUriType.PreviousPage:
                     var previousParameters = new
                     {
-                        pageIndex = parameters.PageIndex-1,
+                        pageIndex = parameters.PageIndex - 1,
                         pageSize = parameters.PageSize,
                         orderBy = parameters.OrderBy,
                         fields = parameters.Fields,
@@ -146,7 +151,7 @@ namespace BlogDemo.Api.Contrlloers
                 case PaginationResourceUriType.NextPage:
                     var nextParameters = new
                     {
-                        pageIndex = parameters.PageIndex+1,
+                        pageIndex = parameters.PageIndex + 1,
                         pageSize = parameters.PageSize,
                         orderBy = parameters.OrderBy,
                         fields = parameters.Fields,
