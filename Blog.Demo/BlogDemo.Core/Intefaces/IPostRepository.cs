@@ -33,5 +33,7 @@ namespace BlogDemo.Core.Intefaces
         Task<PaginatedList<Post>> GetAllPostsAsync(PostParameters parameters);
         Task<Post> GetPostByIdAsync(int Id);
         void AddPost(Post post);
+        void DeletePost(Post post);
+
     }
 }

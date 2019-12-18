@@ -79,5 +79,10 @@ namespace BlogDemo.Infrastructure.Repositories
         {
             _myContext.Posts.Add(post);
         }
+
+        public void DeletePost(Post post)
+        {
+            _myContext.Remove(post);
+        }
     }
 }

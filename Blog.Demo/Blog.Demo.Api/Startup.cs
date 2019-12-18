@@ -78,8 +78,8 @@ namespace BlogDemo.Api
             //注册AotuMapper
             services.AddAutoMapper(typeof(MappingProfile));//9.0之后需要手动指定要注入的类型
             //注册FluentValidator
-            services.AddTransient<IValidator<PostResource>, PostResourceValidator>();
-
+            services.AddTransient<IValidator<PostAddResource>, PostResourceValidator<PostAddResource>>();
+            services.AddTransient<IValidator<PostUpdateResource>, PostResourceValidator<PostUpdateResource>>();
             //IurlHelper
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>()
               .AddScoped<IUrlHelper>(sp => new UrlHelper(sp.GetRequiredService<IActionContextAccessor>().ActionContext));
@@ -88,6 +88,9 @@ namespace BlogDemo.Api
             var propertyMappingContainer = new PropertyMappingContainer();
             propertyMappingContainer.Register<PostPropertyMapping>();
             services.AddSingleton<IPropertyMappingContainer>(propertyMappingContainer);
+
+            services.AddTransient<ITypeHelperService, TypeHelperService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -15,6 +15,8 @@ namespace BlogDemo.Api.Extensions
             CreateMap<Post, PostResource>()
                 .ForMember(x=>x.UpdateTime,opt=> opt.MapFrom(src=>src.LastModified));//UpdateTime来自LastTime
             CreateMap<PostResource, Post>();
+
+            CreateMap<PostUpdateResource, Post>();
         }
     }
 }

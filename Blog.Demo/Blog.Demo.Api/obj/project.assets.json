@@ -12750,11 +12750,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\Blog.Demo.Api\\BlogDemo.Api.csproj",
+      "projectUniqueName": "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\Blog.Demo.Api\\BlogDemo.Api.csproj",
       "projectName": "BlogDemo.Api",
-      "projectPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\Blog.Demo.Api\\BlogDemo.Api.csproj",
+      "projectPath": "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\Blog.Demo.Api\\BlogDemo.Api.csproj",
       "packagesPath": "C:\\Users\\14589\\.nuget\\packages\\",
-      "outputPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\Blog.Demo.Api\\obj\\",
+      "outputPath": "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\Blog.Demo.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12773,11 +12773,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj": {
-              "projectPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj"
+            "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj": {
+              "projectPath": "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj"
             },
-            "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj": {
-              "projectPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj"
+            "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj": {
+              "projectPath": "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj"
             }
           }
         }

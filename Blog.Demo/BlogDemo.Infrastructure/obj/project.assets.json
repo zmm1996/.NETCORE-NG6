@@ -908,11 +908,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj",
+      "projectUniqueName": "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj",
       "projectName": "BlogDemo.Infrastructure",
-      "projectPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj",
+      "projectPath": "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\BlogDemo.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\14589\\.nuget\\packages\\",
-      "outputPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\obj\\",
+      "outputPath": "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -931,8 +931,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj": {
-              "projectPath": "E:\\Practice\\netcore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj"
+            "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj": {
+              "projectPath": "E:\\Practice\\NetCore\\netcoreapi\\.NETCORE-NG6\\Blog.Demo\\BlogDemo.Core\\BlogDemo.Core.csproj"
             }
           }
         }

@@ -4,6 +4,7 @@ using BlogDemo.Core.Intefaces;
 using BlogDemo.Infrastructure.Database;
 using BlogDemo.Infrastructure.Extensions;
 using BlogDemo.Infrastructure.Resources;
+using BlogDemo.Infrastructure.Services;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,8 +26,10 @@ namespace BlogDemo.Api.Contrlloers
         private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
-        private readonly IValidator _validator;
+        private readonly IValidator<PostUpdateResource> _validator;
         private readonly IUrlHelper _urlHelper;
+        private readonly ITypeHelperService _typeHelperService;
+        private readonly IPropertyMappingContainer _propertyMappingContainer;
         private readonly ILogger _logger;
 
         public PostController(IPostRepository postRepository,
@@ -35,8 +38,10 @@ namespace BlogDemo.Api.Contrlloers
             ILoggerFactory loggerFactory,
             IConfiguration configuration,
             IMapper mapper,//AotuMapper
-            IValidator<PostResource> validator
-            , IUrlHelper urlHelper
+            IValidator<PostUpdateResource> validator,
+            IUrlHelper urlHelper,
+            ITypeHelperService typeHelperService,
+            IPropertyMappingContainer propertyMappingContainer
             )
         {
             this._postRepository = postRepository;
@@ -45,6 +50,8 @@ namespace BlogDemo.Api.Contrlloers
             this._mapper = mapper;
             this._validator = validator;
             this._urlHelper = urlHelper;
+            this._typeHelperService = typeHelperService;
+            this._propertyMappingContainer = propertyMappingContainer;
 
             //this._logger = logger;
             this._logger = loggerFactory.CreateLogger(nameof(PostController));
@@ -53,6 +60,16 @@ namespace BlogDemo.Api.Contrlloers
         [HttpGet(Name = "GetPosts")]
         public async Task<ActionResult> Get(PostParameters parameters)
         {
+            if (!_propertyMappingContainer.ValidateMappingExistsFor<PostResource, Post>(parameters.OrderBy))
+            {
+                return BadRequest("OrderBy not exist ");
+            }
+
+            if (!_typeHelperService.TypeHasProperties<PostResource>(parameters.Fields))
+            {
+                return BadRequest("fields not exist ");
+            }
+
             var postsList = await _postRepository.GetAllPostsAsync(parameters);
             //  _logger.LogError(12,"get post all/.....");
             var resources = _mapper.Map<IEnumerable<Post>, IEnumerable<PostResource>>(postsList);
@@ -83,23 +100,31 @@ namespace BlogDemo.Api.Contrlloers
             return Ok(result);
         }
 
-        [HttpGet("{Id}")]
-        public async Task<ActionResult> Get(int Id,string fields=null)
+        [HttpGet("{Id}",Name = "GetPost")]
+        public async Task<ActionResult> Get(int Id, string fields = null)
         {
+            if (!_typeHelperService.TypeHasProperties<PostResource>(fields))
+            {
+                return BadRequest("fields not exist ");
+            }
             var post = await _postRepository.GetPostByIdAsync(Id);
             if (post == null)
             {
                 return NotFound();
             }
-            
+
             var postResource = _mapper.Map<Post, PostResource>(post);
 
             var result = postResource.ToDynamic(fields);
             return Ok(result);
         }
-        [HttpPost]
-        public async Task<ActionResult> Post([FromBody]PostResource postResource)
+        [HttpPost(Name ="CreatePost")]
+        public async Task<ActionResult> Post([FromBody]PostAddResource postResource)
         {
+            if (postResource == null)
+            {
+                return BadRequest();
+            }
 
             //使用Fluent Validator
             var resultValidator = _validator.Validate(postResource);
@@ -108,23 +133,74 @@ namespace BlogDemo.Api.Contrlloers
             {
                 //验证失败
                 string ErrorMessage = string.Join(";", resultValidator.Errors);
-                return new ObjectResult(new { code = 422, ErrorMessage = ErrorMessage });
+              //  return new ObjectResult(new { code = 422, ErrorMessage = ErrorMessage });
+                return UnprocessableEntity(ErrorMessage);//422错误
             }
+            var newPost = _mapper.Map<PostAddResource, Post>(postResource);
 
-            Post post = new Post
-            {
-                Author = "zmm",
-                Body = "sbak",
-                LastModified = DateTime.Now,
-                Title = "add"
-            };
-            _postRepository.AddPost(post);
+            newPost.Author = "Admin";
+            newPost.LastModified = DateTime.Now;
+
+            _postRepository.AddPost(newPost);
 
             //工作单元
-            await _unitOfWork.SaveAsync();
-            return Ok();
+            if (!await _unitOfWork.SaveAsync())
+            {
+                throw new Exception("save fields");
+            }
+            var resultResource = _mapper.Map<Post, PostResource>(newPost);
+            //返回当前创建的内容,通过headers中的Localhost
+            return CreatedAtRoute("GetPost", new { Id = resultResource.Id }, resultResource);
+        }
 
+        [HttpDelete("{id}",Name ="DeletePost")]
+        public async Task<IActionResult> DeletePost(int id)
+        {
+            var post = await _postRepository.GetPostByIdAsync(id);
+            if(post==null)
+            {
+                return NotFound();
+            }
 
+            _postRepository.DeletePost(post);
+
+            if( !await _unitOfWork.SaveAsync())
+            {
+                throw new Exception($"deleting post {id} fields when saving");
+            }
+            return NoContent();
+
+        }
+        [HttpPut("{id}",Name ="UpdatePost")]
+        public async Task<IActionResult> UpdatePost(int id,[FromBody] PostUpdateResource postUpdateResource)
+        {
+            if(postUpdateResource==null)
+            {
+                return BadRequest();//400错误
+            }
+          var resultValidator=  _validator.Validate(postUpdateResource);
+
+            if(!resultValidator.IsValid)
+            {
+                string errorMessage = string.Join(",", resultValidator.Errors);
+                return UnprocessableEntity(errorMessage);//返回422状态码
+            }
+
+          var post= await _postRepository.GetPostByIdAsync(id);
+
+            if(post==null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(postUpdateResource, post);
+
+            if(!await _unitOfWork.SaveAsync())
+            {
+                throw new Exception($"updating post {id} fields when saving  ");
+            }
+
+            return NoContent();
         }
 
 
